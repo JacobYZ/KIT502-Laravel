@@ -5,15 +5,15 @@
     <div class="flex gap-4 m-4">
         <div class="col-md-4">
             <h2>Column 1</h2>
-            <img class="w-48" src="{{ asset('images/stationery_green.jpg') }}" alt="">
+            <img class="w-48 h-72" src="{{ asset('images/stationery_green.jpg') }}" alt="">
         </div>
         <div class="col-md-4">
             <h2>Column 2</h2>
-            <img class="w-48" src="{{ asset('images/stationery.jpg') }}" alt="">
+            <img class="w-48 h-72" src="{{ asset('images/stationery.jpg') }}" alt="">
         </div>
         <div class="col-md-4">
             <h2>Column 3</h2>
-            <img class="w-48" src="{{ asset('images/note_pencil.jpg') }}" alt="">
+            <img class="w-48 h-72" src="{{ asset('images/note_pencil.jpg') }}" alt="">
         </div>
     </div>
 @endsection
