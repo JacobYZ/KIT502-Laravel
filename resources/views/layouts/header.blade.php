@@ -1,11 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ route('main') }}">Laravel 9 CRUD</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-10">
     <div class="navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav grid grid-cols-6 text-3xl">
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('main') }}">Home</a>
             </li>

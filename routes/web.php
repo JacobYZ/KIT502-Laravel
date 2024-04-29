@@ -18,6 +18,8 @@ use App\Http\Controllers\MainPageController;
 |
 */
 
+Route::resource('/products', ProductsController::class);
+
 Route::get('/hello', function () {
     return response('<h1>Hello World!</h1>')->header('Content-Type', 'text/plain')->header('X-Header-One', 'Header ValueX');
 });
