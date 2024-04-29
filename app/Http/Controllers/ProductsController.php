@@ -33,6 +33,12 @@ class ProductsController extends Controller
     }
     public function store(Request $request)
     {
+        // Validate the request
+        $request->validate([
+            'product_name' => 'required|unique:products',
+            'price' => 'required',
+            'quantity' => 'required'
+        ]);
         // Passing in an array to a model (alternative and preferred way)
         $product = Product::create([
             'product_name' => $request->product_name,
@@ -49,13 +55,33 @@ class ProductsController extends Controller
         // $product->save();
         return redirect('/products');
     }
-    public function show($name)
+    public function show($id)
     {
-        $data = ['productOne' => 'Apple', 'productTwo' => 'Orange', 'productThree' => 'Banana'];
-        return view('products.index', ['products' => $data[$name] ?? 'Product ' . $name . ' does not exist.']);
+        $product = Product::find($id);
+        return view('products.show')->with('product', $product);
+        // Passing in an array to a view
+        // $data = ['productOne' => 'Apple', 'productTwo' => 'Orange', 'productThree' => 'Banana'];
+        // return view('products.index', ['products' => $data[$name] ?? 'Product ' . $name . ' does not exist.']);
     }
     public function edit($id)
     {
-        return view('products.edit');
+        $product = Product::find($id);
+
+        return view('products.edit')->with('product', $product);
+    }
+    public function update(Request $request, $id)
+    {
+        $product = Product::where('id', $id)->update([
+            'product_name' => $request->input('product_name'),
+            'price' => $request->input('price'),
+            'quantity' => $request->input('quantity')
+        ]);
+        return redirect('/products');
+    }
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/products');
     }
 }

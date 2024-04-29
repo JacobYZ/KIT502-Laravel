@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Listing;
 use App\Models\Product;
+use App\Models\Store;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
         Product::factory(10)->create();
+        // Store::factory(10)->create();
         Listing::factory(6)->create();
 
         Listing::create([
