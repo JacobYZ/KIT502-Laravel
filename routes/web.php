@@ -52,6 +52,12 @@ Route::post('/listings', [ListingController::class, 'store']);
 
 // Show Edit Form
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// Update Listing Data
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -66,5 +72,5 @@ Route::get('/products/{id}/{name}', [ProductsController::class, 'show'])->where(
 //Named Routes
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
 
-Route::get('/', [MainPageController::class, 'index'])->name('main');
+
 Route::get('about', [MainPageController::class, 'about'])->name('about');

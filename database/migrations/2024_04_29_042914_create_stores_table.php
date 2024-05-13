@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id');
+            $table->unsignedInteger('product_id');
             $table->string('store_location');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
